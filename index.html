@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+    <title>Pedido de Bebida</title>
+</head>
+<body>
+    <h1>Pedido de Bebida</h1>
+    <form action="https://api.whatsapp.com/send" method="GET" target="_blank">
+        <input type="hidden" name="phone" value="558596178516">
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="text" required>
+        </div>
+        <div class="form-group">
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" required>
+        </div>
+        <div class="form-group">
+            <label for="bebida">Bebida:</label>
+            <select id="bebida" name="bebida" required>
+                <option value="HEINEKEN">HEINEKEN</option>
+                <option value="BRAHMA">BRAHMA</option>
+                <option value="DEVASSA">DEVASSA</option>
+                <option value="PETRA">PETRA</option>
+                <option value="SPATEN">SPATEN</option>
+                <option value="BOHEMIA">BOHEMIA</option>
+                <option value="AMSTEL">AMSTEL</option>
+                <option value="SKOL">SKOL</option>
+                <option value="ITAIPAVA">ITAIPAVA</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="quantidade">Quantidade:</label>
+            <input type="number" id="quantidade" name="quantidade" required>
+        </div>
+        <div class="form-group">
+            <label for="unidade_fardo">Unidade ou Fardo:</label>
+            <select id="unidade_fardo" name="unidade_fardo" required>
+                <option value="Unidade">Unidade</option>
+                <option value="Fardo">Fardo</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="forma_pagamento">Forma de Pagamento:</label>
+            <select id="forma_pagamento" name="forma_pagamento" required>
+                <option value="PIX">PIX</option>
+                <option value="Dinheiro">Dinheiro</option>
+                <option value="Cartao">Cartão</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="troco">Troco:</label>
+            <input type="text" id="troco" name="troco">
+        </div>
+        <div class="form-group">
+            <label for="observacao">Observação:</label>
+            <textarea id="observacao" name="observacao"></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit">Enviar Pedido</button>
+        </div>
+    </form>
+</body>
+</html>
